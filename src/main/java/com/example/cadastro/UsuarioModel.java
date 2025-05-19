@@ -16,11 +16,11 @@ public class UsuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //o generated cria um parametro par air incrementando entidades no banco de dados em forma d enumeros
-    
-   Long id;
-    String nome; 
-    String email; 
-      int idade; 
+
+   private Long id;
+   private String nome; 
+   private String email; 
+     private int idade; 
       
     public UsuarioModel(String nome, String email, int idade) {
         this.nome = nome;
