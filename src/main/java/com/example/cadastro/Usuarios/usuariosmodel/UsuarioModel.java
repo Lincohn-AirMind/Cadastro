@@ -1,9 +1,15 @@
-package com.example.cadastro;
+package com.example.cadastro.Usuarios.usuariosmodel;
+import java.util.List;
+
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 //vms transformar isso em uma tabela = entity(entidade) pro banco de dados
 @Entity//transfrma classe em entidade do banco de daddos
@@ -21,6 +27,13 @@ public class UsuarioModel {
    private String nome; 
    private String email; 
      private int idade; 
+
+     @ManyToOne// o atributo abaixo em relação à classe la de cima 1 missao para varios usuarios
+     @JoinColumn(
+        name = "missoes_id" //missoes_id é a chave estrangeira
+
+     )
+     private Missoes missoes;
       
     public UsuarioModel(String nome, String email, int idade) {
         this.nome = nome;
