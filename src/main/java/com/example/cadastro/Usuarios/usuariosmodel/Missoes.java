@@ -4,15 +4,22 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+
+
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+ 
 @Entity
 @Table(name = "tb_missoes")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Missoes {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -20,35 +27,20 @@ private Long id;
 private String nome;
 private String dificuldade;
 
-@OneToMany(mappedBy = "missoes")//mapeia o elemento missao da outra tabela
+
+@OneToMany(mappedBy = "missoes")
+private List<UsuarioModel> usuarios;
+///mapeia o elemento missao da outra tabela
+
+
+}
 
 
 
-private List<UsuarioModel> usuario;
+
+
 //é uma lista pq varios usuarios vao pegar a mesma missao
+//quase all args cosntructor pq falta 
 
-public Missoes(Long id, String nome, String dificuldade) {
-    this.id = id;
-    this.nome = nome;
-    this.dificuldade = dificuldade;
-}
-public Long getId() {
-    return id;
-}
-public void setId(Long id) {
-    this.id = id;
-}
-public String getNome() {
-    return nome;
-}
-public void setNome(String nome) {
-    this.nome = nome;
-}
-public String getDificuldade() {
-    return dificuldade;
-}
-public void setDificuldade(String dificuldade) {
-    this.dificuldade = dificuldade;
-}
 
-}
+
