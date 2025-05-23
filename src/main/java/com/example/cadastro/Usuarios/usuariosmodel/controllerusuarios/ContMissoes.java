@@ -18,9 +18,6 @@ import com.example.cadastro.Usuarios.usuariosmodel.Missoes;
 @RequestMapping("/missoes")
 
 public class ContMissoes {
-   
-@Autowired
-private Missoes missoes;
 
 @Autowired
 private MissoesRepo missoesRepository;
@@ -31,11 +28,14 @@ return missoesRepository.findAll();
 }
 @PostMapping
 public Missoes postarMissoes(@RequestBody Missoes missao){
-return missoesRepository.save(missoes);
+return missoesRepository.save(missao);
 }
 @DeleteMapping("/{id}")
 public void deletarMissao(@PathVariable Long id){
+    
     missoesRepository.deleteById(id);
+        System.out.println("Houve um erro ao extinguir missão");
+    
 }
 
 

@@ -27,20 +27,9 @@ private Long id;
 private String nome;
 private String dificuldade;
 
-
 @OneToMany(mappedBy = "missoes")
 private List<UsuarioModel> usuarios;
 ///mapeia o elemento missao da outra tabela
-
-
 }
-
-
-
-
-
 //é uma lista pq varios usuarios vao pegar a mesma missao
 //quase all args cosntructor pq falta 
-
-
-

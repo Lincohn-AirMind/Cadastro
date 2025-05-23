@@ -1,8 +1,4 @@
 package com.example.cadastro.Usuarios.usuariosmodel;
-import java.util.List;
-
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -42,7 +38,5 @@ public class UsuarioModel {
      //puxa as missoes para que esta classe altere e tenha missoes
      //no futuro
      private Missoes missoes;
-    
-  
     
 }
