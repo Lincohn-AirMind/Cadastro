@@ -1,0 +1,6 @@
+2025-05-23 15:15:48.273563-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADASTRO_USUARIO" not found (this database is empty); SQL statement:
+select um1_0.id,um1_0.email,um1_0.idade,um1_0.missoes_id,um1_0.nome from cadastro_usuario um1_0 [42104-232]
+2025-05-23 15:16:20.836374-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CADASTRO_USUARIO" not found (this database is empty); SQL statement:
+insert into cadastro_usuario (email,idade,missoes_id,nome,id) values (?,?,?,?,default) [42104-232]

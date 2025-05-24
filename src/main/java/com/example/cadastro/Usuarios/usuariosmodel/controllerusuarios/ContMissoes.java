@@ -34,7 +34,7 @@ return missoesRepository.save(missao);
 public void deletarMissao(@PathVariable Long id){
     
     missoesRepository.deleteById(id);
-        System.out.println("Houve um erro ao extinguir missão");
+        
     
 }
 

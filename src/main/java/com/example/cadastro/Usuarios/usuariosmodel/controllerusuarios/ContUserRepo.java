@@ -1,6 +1,7 @@
 package com.example.cadastro.Usuarios.usuariosmodel.controllerusuarios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +43,15 @@ public List<UsuarioModel> listarUsuarios(){
     public void deletarUsuario(@PathVariable Long id){
     usuarioRepository.deleteById(id);
      
-}}
+}
+@GetMapping("/{id}")//puxa o usuario por id
+public ResponseEntity buscarPorId(@PathVariable Long id){
+    return usuarioRepository.findById(id)
+    .map(ResponseEntity::ok)
+    .orElseGet(() -> ResponseEntity.notFound().build());
+
+}
+}
 
 
 
