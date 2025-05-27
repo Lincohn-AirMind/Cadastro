@@ -78,3 +78,24 @@ background-color:black;
     position:absolute;
     margin-top:220px;
 }
+#criarMissao{
+position:abosolute;
+margin-top:240px;
+}
+#admitirMissao{
+background-color:blue;
+position:absolute;
+}
+#mostrarMissao{
+position:absolute;
+color: blue;
+}
+#deletar{
+    position:absolute;
+    background-color:red;
+    color:white;
+}
+#segElement{
+    position:absolute;
+    margin-top:120px;
+}

@@ -2,6 +2,7 @@ package com.example.cadastro.Usuarios.usuariosmodel;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 
@@ -25,7 +26,10 @@ public class Missoes {
 
 private Long id;
 private String nome;
-private String dificuldade;
+//private int duracao;//dificuldade
+
+@Column(nullable = false)
+private Integer duracao;
 
 @OneToMany(mappedBy = "missoes")
 private List<UsuarioModel> usuarios;
