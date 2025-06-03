@@ -2,6 +2,9 @@ package com.example.cadastro.Usuarios.usuariosmodel;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
  
 @Entity
-@Table(name = "tb_missoes")
+@Table(name = "mission")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -32,8 +35,11 @@ private String nome;
 private Integer duracao;
 
 @OneToMany(mappedBy = "missoes")
+@JsonIgnore
 private List<UsuarioModel> usuarios;
 ///mapeia o elemento missao da outra tabela
 }
+
+
 //é uma lista pq varios usuarios vao pegar a mesma missao
 //quase all args cosntructor pq falta 

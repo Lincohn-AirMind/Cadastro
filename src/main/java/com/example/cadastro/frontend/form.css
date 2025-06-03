@@ -99,3 +99,9 @@ color: blue;
     position:absolute;
     margin-top:120px;
 }
+#findMissao{
+    position:absolute;
+    background-color:purple;
+    color: cyan;
+    margin-left:55px;
+}

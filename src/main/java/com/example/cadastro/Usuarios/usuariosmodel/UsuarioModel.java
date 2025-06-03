@@ -1,4 +1,6 @@
 package com.example.cadastro.Usuarios.usuariosmodel;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +17,7 @@ import jakarta.persistence.ManyToOne;
 // tem q baixar a dependdencia de banc de dados, spring jpa
 
 
-@Table(name = "Cadastro_Usuario")
+@Table(name = "cadastro_usuario")
 @NoArgsConstructor // cria constructor invisiveis
 @AllArgsConstructor// a mesma coisa do de cima porém com todos os atributos.
 @Data
@@ -31,10 +33,12 @@ public class UsuarioModel {
      private int idade; 
 
      @ManyToOne// o atributo abaixo em relação à classe la de cima 1 missao para varios usuarios
+     
      @JoinColumn(
-        name = "missoes_id" //missoes_id é a chave estrangeira
+        name = "missoes_id" //missoes_id é a chave estrangeira missoes_id !!!!!!!!!!!!!!!!
 
      )
+     
      //puxa as missoes para que esta classe altere e tenha missoes
      //no futuro
      private Missoes missoes;

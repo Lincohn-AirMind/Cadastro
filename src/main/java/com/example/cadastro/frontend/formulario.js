@@ -40,8 +40,6 @@ document.getElementById("apag").onclick= function(){
     document.getElementById("retornoLista").innerText = "";
 }
 document.getElementById("buscarUser").onclick= function(){
-
-
     let id=document.getElementById("inserirId").value;
 fetch(`http://localhost:8080/usuarios/${id}`)
    .then(response =>{
@@ -92,6 +90,38 @@ document.getElementById("apagUser").onclick = function(){
         }else{alert("Deu ruim no cadastro");}
     })
         }
+        document.getElementById("findMissao").onclick = function(){
+        idMissao= document.getElementById("duracao").value;
+        mostrarMissao=document.getElementById("mostrarMissao");
+        fetch(`http://localhost:8080/missoes/${idMissao}`)
+        .then(response => {
+            if(response.status===404){
+                alert("missao inexistente")
+                throw new error("Deu muito ruim");
+            }if(response.ok){
+                return response.json();
+            }else{ 
+                alert("Deu ruim")
+            };
+        })
+        .then(data => { mostrarMissao.innerText=JSON.stringify(data,null,2)
+        })
+    .catch(erro => {alert("Deu ruim =>" + erro)});
+    if(document.getElementById("duracao").value===""){
+    fetch(`http://localhost:8080/missoes`)
+    .then( response => response.json())
+    .then( data => { document.getElementById("mostrarMissao").innerText=JSON.stringify(data,null,2)})
+    .catch(erro => {
+        alert("houve um errinho nos registros" + erro);
+    })    
+}
+//delete em obras
+//sistema de delete multiplo por ;
+document.getElementById("deletar").onclick = function(){
+
+}
+        }
+
        
 
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,9 +46,18 @@ public void deletarMissao(@PathVariable Long id){
     missoesRepository.deleteById(id);
 }
 @GetMapping("/{id}")
-public Optional<Missoes> buscarMissao(@RequestParam Long id) {
-    return missoesRepository.findById(id);
+ //em obras
+ public ResponseEntity buscarId (@PathVariable Long id){
+   
+Optional<Missoes> missao= missoesRepository.findById(id);
+if(missao.isPresent()){
+    return ResponseEntity.ok(missao.get());
+}else{
+    
+    return ResponseEntity.notFound().build();
 }
+ }
+
 
 
 
