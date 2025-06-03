@@ -118,7 +118,23 @@ document.getElementById("apagUser").onclick = function(){
 //delete em obras
 //sistema de delete multiplo por ;
 document.getElementById("deletar").onclick = function(){
+valor=document.getElementById("criarMissao").value;
 
+array=valor.split(";");
+array.forEach(item =>{
+
+fetch(`http://localhost:8080/missoes/${item}`,{
+method:"DELETE"})
+.then(response =>{
+    if(response.ok){
+        document.getElementById("mostrarMissao").innerText="usuario deletado";
+    }else{alert("Erro ao deletar")}}
+ )
+.catch(erro =>{
+    alert("Deu ruim ao deletar fiote " + erro)
+})
+
+})
 }
         }
 
