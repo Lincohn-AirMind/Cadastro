@@ -35,12 +35,8 @@ public class UsuarioModel {
      @ManyToOne// o atributo abaixo em relação à classe la de cima 1 missao para varios usuarios
      
      @JoinColumn(
-        name = "missoes_id" //missoes_id é a chave estrangeira missoes_id !!!!!!!!!!!!!!!!
-
+        name = "missoes_id" 
      )
-     
-     //puxa as missoes para que esta classe altere e tenha missoes
-     //no futuro
      private Missoes missoes;
     
 }

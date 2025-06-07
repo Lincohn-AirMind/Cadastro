@@ -1,11 +1,13 @@
 package com.example.cadastro.Usuarios.usuariosmodel.controllerusuarios;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,11 +47,29 @@ public ResponseEntity buscarPorId(@PathVariable Long id){
     return usuarioRepository.findById(id)
     .map(ResponseEntity::ok)
     .orElseGet(() -> ResponseEntity.notFound().build());
-
+}//em obras
+@PutMapping("/{id}")
+public ResponseEntity atualizar(@RequestBody UsuarioModel modelo, @PathVariable Long id){
+    Optional <UsuarioModel> user=usuarioRepository.findById(id);
+    if(user.isPresent()){
+        UsuarioModel usuarioOld = user.get();
+        usuarioOld.setNome(modelo.getNome());
+        usuarioOld.setEmail(modelo.getEmail());
+        usuarioOld.setIdade(modelo.getIdade());
+        usuarioOld.setMissoes(modelo.getMissoes());//!!!
+        usuarioRepository.save(usuarioOld);
+        return ResponseEntity.ok(usuarioOld);
+    }else{
+        return ResponseEntity.notFound().build();
+    }
+}//em obras
+    
 }
 
 
-}
+
+
+
 
 
 

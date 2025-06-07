@@ -34,9 +34,18 @@ margin-top:130px;
     position:absolute;
 }
 #retornoLista{
+    display:grid;
+    position:absolute;
+    margin-left:400px;
+    margin-top:10px;
+    gap:30px;
+}
+#container{
+    margin-left:400px;
+    
     position:absolute;
     margin-top:10px;
-    margin-left:400px;
+    background-color:blueviolet;
 }
 #registros{
     margin-top:170px;
@@ -76,11 +85,14 @@ background-color:black;
 }
 #idUser{
     position:absolute;
-    margin-top:220px;
+    margin-top:233px;
+    border:solid green 10px;
+    background-color:greenyellow;
+    color:darkred;
+    border-radius:0 20px 0 20px;
 }
 #criarMissao{
 position:abosolute;
-margin-top:240px;
 }
 #admitirMissao{
 background-color:blue;
@@ -104,4 +116,15 @@ color: blue;
     background-color:purple;
     color: cyan;
     margin-left:55px;
+}
+#mais{
+    position:absolute;
+    margin-top:400px;    
+}
+#campinho{
+    padding:3px;
+    color:white;
+    background-color:blueviolet;
+border:solid 10px purple;
+border-radius:30px 0 30px 0;
 }
