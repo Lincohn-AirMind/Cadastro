@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="form.css" ></link>  
+  <link rel="stylesheet" href="form.css" >
+  <link rel="stylesheet" heref="continue.css">
 </head>
 <body>
+  <div id="tudao">
     <div id="conjunto">
 <input type="text" id="nome" placeholder="Nome"><br>
 <input type="email" id="email" placeholder="Email"><br>
@@ -33,7 +35,26 @@
 <input type="button" id="deletar" value="deletar"><br>
 <p id="mostrarMissao"></p>
 </div>
+<input type="button" value="Atualizar" id="butAtualizar">
+<input type="button" value="Junção Dinãmica" id="juncao">
+<p id="brega" class="none"></p>
+<button id="teste">teste</button>
+<div id="carregar"></div>
+<input type="button" value="stop" id="stop">
+</div>
+<div id="barraMenu">
+<svg id="menu" width="40px" height="50px">
+<rect id="ret1" fill="gold" x="0" y="0" width="50px" height="8px"></rect>
+<rect id="ret2" fill="gold" x="0" y="15" width="50px" height="8px"></rect>
+<rect id="ret3" fill="gold" x="0" y="30" width="50px" height="8px"></rect>
+</svg></div>
 
+<div id="abaMenu" class="none">
+  
+<button id="noturno" >Noturno</button>
+<button id="claro" >Claro</button>
+
+</div>
 
 <script src="formulario.js"></script>
 </body>

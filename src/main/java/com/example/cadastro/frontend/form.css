@@ -128,3 +128,161 @@ color: blue;
 border:solid 10px purple;
 border-radius:30px 0 30px 0;
 }
+#juncao{
+    background-color:black;
+    color: white;
+    position:absolute;
+    margin-top: 500px;
+    margin-left:-70px;
+}
+#brega{
+   
+}
+#teste{
+    margin-top:700px;
+    position:absolute;
+}
+.none{
+    display:none;
+}
+.bonito{
+ color:lavender;
+    background-color:indigo;
+    position:absolute;
+    padding:4px;
+    border-radius:5px;
+    border: 3px solid yellow;
+    margin-left:800px;
+    width:217px;
+    animation: carregarLado 1s ease-in-out;
+    overflow:auto;
+}
+#brega1{  
+    overflow:hidden;
+    background-color:darkturquoise;
+    padding:5px;
+    border-left:solid 2px yellow;
+    border-top:yellowgreen solid 2px;
+    border-radius:5px 6px 30px 10px;
+    animation: carregandoBaixo 2s linear;
+}
+#barraMenu{
+    position:fixed;
+background-color:#0000;
+width:2000px;
+height:100px;
+top:0;
+left:0;
+border-bottom:4px solid goldenrod;
+border-left:2px solid goldenrod;
+border-radius:0 0 0 150px;
+}
+#noturno{
+    color:white;
+    background-color:black;
+    border:1px solid white;
+    width:100%;
+    height:30px;
+    text-align:left;
+    padding-left:8px;
+    cursor:pointer;
+}
+#claro{
+    color:black;
+    background-color:white;
+    border:1px solid black;
+width:100%;
+height:30px;
+cursor:pointer;
+text-align:left;
+padding-left:8px;
+
+}
+#tudao{
+    position:absolute;
+    margin-top:100px;
+}
+#abaMenu{
+    background-color:#56070c;
+    height:300px;
+    width:200px;
+    position:absolute;
+margin-left: 1118px;
+margin-top:95px;
+
+}
+#menu{
+    margin-top:20px;
+    margin-left:1280px;
+}
+
+#stop{
+    position:absolute;
+    margin-top:480px;
+    margin-left:130px;
+    background-color:red;
+    color:white;
+}
+@keyframes carregarLado{
+0%{width:0}
+50%{width:107px}
+100%{width:217px}
+}
+@keyframes carregandoBaixo{
+    0%{
+width:0%;
+height:100%;
+font-size:0;
+}
+    10%{
+width:2%;
+height:100%;
+font-size:0;
+    }
+    20%{
+width:9%;
+height:100%;
+font-size:0;
+    }
+    30%{
+width:18%;
+height:100%;
+font-size:0;
+    }
+    40%{
+width:24%;
+height:100%;
+font-size:0;
+    }
+    50%{
+    width:29%;
+height:100%;
+font-size:0;
+    }
+    60%{
+width:36%;
+height:100%;
+font-size:0;
+    }
+    70%{
+width:45%;
+height:100%;
+font-size:0;
+    }
+    80%{
+width:70%;
+height:100%;
+
+    }
+    90%{
+width:90%;
+height:100%;
+
+    }
+    100%{
+width:100%;
+height:100%;
+
+    }
+
+}

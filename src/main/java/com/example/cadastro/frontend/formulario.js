@@ -124,8 +124,10 @@ document.getElementById("apagUser").onclick = function(){
         if(response.ok){
             alert("Missão criada");
         }else{alert("Deu ruim no cadastro");}
-    }).catch(erro => {alert("Deu ruim no cadastro" + erro)})}//em obras
-
+    }).catch(erro => {alert("Deu ruim no cadastro" + erro)})}
+    
+    //em obras, put dinãmico
+/*
     let idMissoes = document.getElementById("duracao").value;
     let idUser= document.getElementById("inserirId").value;
     const criarMissao=document.getElementById("criarMissao").value;
@@ -135,7 +137,7 @@ fetch(`http://localhost:8080/juncao/usuarios/${idUser}/missoes/${idMissoes}`,
 })
 .then( response =>{if(response.ok){alert("cdastro atribuido")}else{alert("atribuicao não feita")}})
 .catch(erro => alert("erro    " + erro))}
-
+*/
 }//em obras
         
         document.getElementById("findMissao").onclick = function(){
@@ -182,8 +184,106 @@ method:"DELETE"})
     alert("Deu ruim ao deletar fiote " + erro)
 })
 })
-}
+}}
+
+//junção dinamica
+let rodar=false;
+document.getElementById("stop").onclick = function(){
+    console.log(rodar);
+    rodar=false;
+console.log(rodar);}
+
+    document.getElementById("juncao").onclick = function(){
+        rodar=true;
+    loopJuncao();}
+    
+    function loopJuncao(){
+        if(!rodar) return;
+fetch(`http://localhost:8080/juncao/usuarios/lista-ids`)
+.then(response => {
+    if(response.ok){console.log("deu bom os ids");
+         return response.json();
+    }else{alert("deu ruim");
         }
+}).then(ids => {
+
+arrayUsers=ids;
+   console.log(arrayUsers);
+let execucoes=0;
+
+    fetch(`http://localhost:8080/juncao/missoes/margem-ids`)
+    .then(response => {
+        if(response.ok){
+            console.log("missoes deu certo");
+        return response.json();}else{alert("missoes deu errado");}
+    })
+    .then(data => {
+     arrayMissoes= data;
+    t= Math.floor(Math.random() * arrayUsers.length);
+  
+document.getElementById("brega").classList.replace("none","bonito");    
+document.getElementById("brega").innerHTML="";
+
+arrayUsers.forEach( idU => {
+     s= Math.floor(Math.random() * arrayMissoes.length);
+let idM= arrayMissoes[s];
+
+let maccher=idM;
+ fetch(`http://localhost:8080/juncao/missoes/duracao/${maccher}`,{
+        method:"GET"
+    }) 
+    .then(responder => responder.json())
+    .then( dataia => { 
+
+ 
+          setTimeout(() => { fetch(`http://localhost:8080/juncao/usuarios/${idU}/missoes/${idM}/juncao`,{
+                method:"PUT",
+                headers:{
+                    "Content-Type":"application/json"}
+    }).then(response => {if(response.ok){
+        response.json().then(usuarAtua =>{
+execucoes++;
+
+        console.log("o processo dinamico deu certo");
+        console.log("user " + idU);
+        console.log("missao " + idM);
+       let paragJuncao= document.createElement("div");
+       paragJuncao.id="brega1";
+
+if(rodar && execucoes == arrayUsers.length) loopJuncao(); 
+
+paragJuncao.innerHTML=`
+<strong>Id</strong> : ${usuarAtua .id}<br>
+<strong>Nome</strong> : ${usuarAtua .nome}<br>
+<strong>Email</strong> : ${usuarAtua .email}<br>
+<strong>Idade</strong> : ${usuarAtua.idade} <br>
+<strong>Missao</strong> : ${usuarAtua.missoes ? usuarAtua.missoes.nome:"Nenhuma"} <br>
+`; document.getElementById("brega").appendChild(paragJuncao);
+})
+    }else{alert("deu bem ruim");}
+});   }, dataia * 1000   ); /* -> esses dois sao caguetas do dataia*/})
+
+    })}).catch(erro => {alert("erro " + erro )}) });
+
+}
+document.getElementById("teste").addEventListener("click", () =>{
+    const brega=document.getElementById("brega");
+    const posicoes=window.getComputedStyle(brega);
+    console.log(posicoes.width);
+    console.log(posicoes.height);
+})
+document.getElementById("menu").addEventListener("click",()=>{
+    document.getElementById("abaMenu").classList.remove("none");
+
+ document.getElementById("abaMenu").addEventListener("mouseleave",()=>{
+    
+    document.getElementById("abaMenu").classList.add("none");
+    
+})
+
+
+   
+})
 
 
        
