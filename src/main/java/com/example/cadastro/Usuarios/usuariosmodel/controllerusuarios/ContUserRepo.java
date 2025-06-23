@@ -43,13 +43,13 @@ public List<UsuarioModel> listarUsuarios(){
      
 }
 @GetMapping("/{id}")//puxa o usuario por id
-public ResponseEntity buscarPorId(@PathVariable Long id){
+public ResponseEntity<UsuarioModel> buscarPorId(@PathVariable Long id){
     return usuarioRepository.findById(id)
     .map(ResponseEntity::ok)
     .orElseGet(() -> ResponseEntity.notFound().build());
 }//em obras
 @PutMapping("/{id}")
-public ResponseEntity atualizar(@RequestBody UsuarioModel modelo, @PathVariable Long id){
+public ResponseEntity<UsuarioModel> atualizar(@RequestBody UsuarioModel modelo, @PathVariable Long id){
     Optional <UsuarioModel> user=usuarioRepository.findById(id);
     if(user.isPresent()){
         UsuarioModel usuarioOld = user.get();

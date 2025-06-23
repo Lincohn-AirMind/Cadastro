@@ -209,11 +209,13 @@ padding-left:8px;
     position:absolute;
 margin-left: 1118px;
 margin-top:95px;
-
+animation:none;
+position:fixed;
 }
 #menu{
     margin-top:20px;
     margin-left:1280px;
+    cursor:pointer;
 }
 
 #stop{

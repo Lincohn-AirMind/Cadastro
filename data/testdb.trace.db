@@ -300,3 +300,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/dener/O
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 58 more
+2025-06-23 15:03:13.024230-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM CADASTRO_USUARIO ADMIN \000d\000a[*]DROP TABLE IF EXISTS admin"; SQL statement:
+SELECT * FROM CADASTRO_USUARIO ADMIN 
+DROP TABLE IF EXISTS admin [42000-232]

@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="form.css" >
-  <link rel="stylesheet" heref="continue.css">
+  <link rel="stylesheet" href="continue.css">
+  <link rel="stylesheet" href="primform.css">
 </head>
 <body>
+  <div id="telaInicial">
+    <div id="abaInputs">
+      <p id="textoForm">Preencha os dados abaixo:</p>
+      <input id="nome1" type="text" placeholder="nome"><br>
+      <input id="senha1" type="password" placeholder="senha"><br>
+      <input id="enviar1" type="submit" value="Enviar"><br>
+  <div id="ntemconta">Não tem uma conta?</div><br>
+  <div id="esqueceu">Esqueceu-se da senha?</div>
+    </div>
+  </div>
+
+<div id="telaCriarConta" class="none">
+  <div id="abaCriarConta">
+    <p id="t" >Crie sua conta</p>
+    <input id="nome2" placeholder="insira seu nome" type="text">
+    <input id="senha2" placeholder="senha mínima:4">
+    <input id="submit2" type="submit" value="Criar">
+  </div>
+</div>
+
+  <div id="display" class="none">
   <div id="tudao">
     <div id="conjunto">
 <input type="text" id="nome" placeholder="Nome"><br>
@@ -55,7 +77,9 @@
 <button id="claro" >Claro</button>
 
 </div>
-
+</div>
+<script src="continuacao.js"></script>
 <script src="formulario.js"></script>
+
 </body>
 </html>

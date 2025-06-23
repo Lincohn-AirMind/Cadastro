@@ -274,16 +274,80 @@ document.getElementById("teste").addEventListener("click", () =>{
 })
 document.getElementById("menu").addEventListener("click",()=>{
     document.getElementById("abaMenu").classList.remove("none");
+    document.getElementById("abaMenu").style.animation="menuMovimento 2s linear";
 
  document.getElementById("abaMenu").addEventListener("mouseleave",()=>{
     
+    document.getElementById("abaMenu").style.animation="none";
     document.getElementById("abaMenu").classList.add("none");
     
 })
-
-
-   
 })
+document.getElementById("noturno").addEventListener("click", ()=>{
+    let corpo=document.querySelector("body");
+    corpo.style.backgroundColor="black";
+    document.getElementById("barraMenu").style.backgroundColor="white";
+    document.getElementById("nome").style.backgroundColor="gray";
+    document.getElementById("email").style.backgroundColor="gray";
+    document.getElementById("idade").style.backgroundColor="gray";
+let style= document.createElement("style");
+let inputs=document.querySelectorAll("input");
+inputs.forEach(input => {
+    style.innerHTML=`
+    input::placeholder{
+    color:yellow;
+    }
+    input{
+    background-color:gray;}`;
+    document.head.appendChild(style);
+    document.getElementById("barraMenu").style.backgroundColor="purple";
+    document.getElementById("barraMenu").style.border="3px solid pink";
+    let botoes=document.querySelectorAll("input");
+
+    botoes.forEach(botao => {
+       let botoesEscuros= window.getComputedStyle(botao).backgroundColor;
+       let cor="rgb(0, 0, 0)"; //precisa dos espaços para funcionar.
+if(botoesEscuros == cor ){
+    botao.style.backgroundColor="white";
+    botao.style.color="black";
+}
+})})
+})
+document.getElementById("claro").addEventListener("click", ()=>{
+
+let inputs = document.querySelectorAll("input");
+inputs.forEach(input =>{
+    let coresEscuras = window.getComputedStyle(input).backgroundColor;
+    console.log(coresEscuras);
+    let cor="rgb(255, 255, 255)";
+    if(coresEscuras == cor && document.body.style.backgroundColor=="black"){
+input.style.backgroundColor="black";
+input.style.color="white";
+document.body.style.backgroundColor="white";
+document.getElementById("barraMenu").style.backgroundColor="white";
+document.getElementById("barraMenu").style.border="3px solid goldenrod";
+let inputsFundoBranco=document.querySelectorAll("input");
+let corCinza="rgb(128, 128, 128)";
+inputsFundoBranco.forEach(inputBranco =>{
+    let botaoCinza=window.getComputedStyle(inputBranco).backgroundColor;
+
+   inputsFundoBranco.forEach(input =>
+    { let style=document.createElement("style");
+        if(botaoCinza == corCinza){
+        inputBranco.style.backgroundColor="white";
+        style.innerHTML=`
+        input::placeholder{
+        color:black;}`;
+    }})//o codigo acima esta com linhas desnecessarias e apresenta erro
+})
+
+    }
+})
+ 
+
+})
+
+
 
 
        
